@@ -11,8 +11,8 @@ public class Escuela
     public static ArrayList<Double> ingresos = new ArrayList<Double>();
     private Maestros maestros;
     private Estudiantes estudiantes;
-    private int correlativo;
-    private int correlativoEstudiante = 1;
+    private int correlativo = 1;
+    private int correlativoEstudiante = 2;
 
 
     // GET y SET
@@ -85,16 +85,17 @@ public class Escuela
         String ID;
         double total = 0;
 
-        System.out.println("Ingrese su id:");
+        System.out.print("Ingrese su id: ");
         ID = lector.nextLine();
 
-        for (int i = 0; i< Main.getEstudiantes().size(); i++)
+        for (int i = 0; i<Main.getEstudiantes().size(); i++)
         {
             if (ID.equals(Main.getEstudiantes().get(i).getId()))
             {
                 System.out.println("Nombre: " + Main.getEstudiantes().get(i).getNombre());
                 System.out.println("Grado: " + Main.getEstudiantes().get(i).getGrado());
                 System.out.println("Pagos Realizados: ");
+                System.out.println(" ");
 
                 for (int j = 0; j< Main.getEstudiantes().get(i).getPagosSize(); j++ )
                 {
